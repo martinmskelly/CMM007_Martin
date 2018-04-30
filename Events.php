@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +20,10 @@
     <style>
         * {box-sizing: border-box;}
         ul {list-style-type: none;}
-        body {font-family: Verdana, sans-serif;}
+        body {font-family: Verdana, sans-serif;
+            background-color: #363636;
+        }
+
 
 
         .calContainer{
@@ -25,6 +35,12 @@
             background-color: #363636;
 
 
+        }
+        .login{
+            background-color: #363636;
+            width:100%;
+            color: white;
+            margin: 10px;
         }
 
         .month {
@@ -106,9 +122,6 @@
         }
 
         .infoContainer{
-            position: fixed;
-            bottom: 0px;
-            left: 0px;
             width: 67%;
             height: 95%;
             background-color: #363636;
@@ -122,24 +135,29 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">ScotlandCycleCommunity</a>
+                <a class="navbar-brand" href="index.php">ScotlandCycleCommunity</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="Photos.html">Photos</a></li>
-                <li><a href="Routes.html">Routes</a></li>
-                <li><a href="Events.html">Events</a></li>
-                <li><a href="Message%20Board.html">Message Board</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="Photos.php">Photos</a></li>
+                <li><a href="Routes.php">Routes</a></li>
+                <li><a href="Events.php">Events</a></li>
+                <li><a href="Message%20Board.php">Message Board</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="SignUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+
         </div>
     </nav>
+
 </header>
 <body>
+<br/>
 
+<br/>
+<div class = "login">
+    <?php include "login.php";
+    $_SESSION['return'] = 'Events.php';
+    ?>
+</div>
 <div class="calContainer">
 <div class="month">
     <ul>

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -11,30 +18,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">ScotlandCycleCommunity</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="Photos.html">Photos</a></li>
-            <li><a href="Routes.html">Routes</a></li>
-            <li><a href="Events.html">Events</a></li>
-            <li><a href="Message%20Board.html">Message Board</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="SignUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-    </div>
-</nav>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
     <style>
 
+        body {
+
+
+            background-color: #363636;
+        }
+
+        .login{
+            background-color: #363636;
+            width:33%;
+            color: blue;
+            margin: 10px;
+        }
 
         .mnContainer{
             position: fixed;
@@ -68,30 +65,54 @@
 
 
     </style>
-
-
-
 </head>
 <body>
-<!--<div id="map"></div>
-<script>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.php">ScotlandCycleCommunity</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="Photos.php">Photos</a></li>
+            <li><a href="Routes.php">Routes</a></li>
+            <li><a href="Events.php">Events</a></li>
+            <li><a href="Message%20Board.php">Message Board</a></li>
+        </ul>
+
+
+    </div>
+</nav>
+
+
+
+<div id="map"></div>
+<!-- <script>
     var map;
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('googleMap'), {
             center: {lat: -33.8567844, lng: 151.2131027},
             zoom: 15
         });
     }
 
-</script>
--->
+</script>-->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVYp8c5R7xJJxHFigs_7INrf2fuPiCLIY&callback=initMap"
         async defer></script>
 
 <main>
+    <br/>
+
+    <br/>
 
     <div class="mnContainer">
         <div class="listContainer">
+            <div class = "login">
+                <?php include "login.php";
+                $_SESSION['return'] = 'Routes.php';
+                ?>
+            </div>
           <h1>Routes</h1>
             <div id="googleMap" style="width:100%;height:50%;"></div>
             <a onClick="myMap(-31.9546904,115.8350292)">Route 1</a>
@@ -119,7 +140,9 @@
                     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4jChq2-_I4Dc0KSh3VI_OCaCDcG68oq8&callback=myMap"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4jChq2-_I4Dc0KSh3VI_OCaCDcG68oq8&callback=myMap">
+                map.onload(myMap(-31.9546904,115.8350292));
+            </script>
 
         </div>
     </div>

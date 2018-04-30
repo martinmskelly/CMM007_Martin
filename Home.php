@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +31,12 @@
             background-color: #363636;
 
         }
+        .login{
+            background-color: #363636;
+            width:33%;
+            color: blue;
+            margin: 10px;
+        }
 
         .img-responsive {
             display:block;
@@ -44,7 +57,7 @@
             width:33%;
             color: white;
             margin: 10px;
-            <!-- margin for spacing -->
+        <!-- margin for spacing -->
 
         }
         .test{
@@ -60,15 +73,16 @@
         .imgcont {
             width: 100%;
             background-color: #363636;
+
         }
     </style>
 </head>
 <body>
 <!--header start-->
 <header>
-   <div class="imgcont">
-    <img src= "Images/BikeLake.jpg" class="img-responsive" alt="Cyclists going up hill with loch in the distance"  style="width:50%">
-   </div>
+    <div class="imgcont">
+        <img src= "Images/BikeLake.jpg" class="img-responsive" alt="Cyclists going up hill with loch in the distance"  style="width:50%">
+    </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -76,17 +90,17 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="Photos.html">Photos</a></li>
-                <li><a href="Routes.html">Routes</a></li>
-                <li><a href="Events.html">Events</a></li>
-                <li><a href="Message%20Board.html">Message Board</a></li>
+                <li><a href="Photos.php">Photos</a></li>
+                <li><a href="Routes.php">Routes</a></li>
+                <li><a href="Events.php">Events</a></li>
+                <li><a href="Message%20Board.php">Message Board</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="SignUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+
         </div>
     </nav>
+    <?php include "login.php";
+    $_SESSION['return'] = 'Home.php';
+    ?>
 </header>
 <!-- header end-->
 <!-- main start-->
@@ -94,17 +108,17 @@
     <div class="mainContainer">
         <div class="aboutContainer">
             <h1>ABOUT</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                 anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                 anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
@@ -117,7 +131,7 @@
             <p>siteadmin@scotlandcycleco.com</p>
 
 
-            </div>
+        </div>
         <div class="twitter">
             <a class="twitter-timeline"  href="https://twitter.com/search?q=cycling" data-widget-id="976495588333248512">Tweets about cycling</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
@@ -147,7 +161,7 @@
             <img src="Images/cyclist.png" alt="HTML tutorial" style="width:120px; padding:5px ;height:84px;border:1px;float: left">
         </a>
         <a href="https://www.cyclingweekly.com">
-        <img src="Images/cw-logo.png" alt="HTML tutorial" style="width:120px; padding:5px ;height:84px;border:1px;float: left">
+            <img src="Images/cw-logo.png" alt="HTML tutorial" style="width:120px; padding:5px ;height:84px;border:1px;float: left">
         </a>
         <a href="https://www.britishcycling.org.uk/gbcyclingteam">
             <img src="Images/BC Logo Large.jpg" alt="https://www.google.com" style="width:120px; padding:5px ;height:84px;border:1px;float: left">

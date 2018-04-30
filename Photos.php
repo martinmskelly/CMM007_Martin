@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +24,17 @@
     * {
         box-sizing: border-box;
     }
+    .login{
+        background-color: #363636;
+        width:100%;
+        color: white;
+        margin: 10px;
+    }
 
     body {
         margin: 0;
         font-family: Arial;
+        background-color: #363636;
     }
 
     .header {
@@ -34,6 +48,13 @@
         -ms-flex-wrap: wrap; /* IE10 */
         flex-wrap: wrap;
         padding: 0 4px;
+        flex-direction: row;
+    }
+    .row img{
+        max-width: 60%;
+        max-height: 400px;
+        object-fit: scale-down;
+        display: inline;
     }
 
     /* Create four equal columns that sits next to each other */
@@ -65,6 +86,7 @@
             flex: 100%;
             max-width: 100%;
         }
+
     }
 </style>
 
@@ -73,55 +95,50 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">ScotlandCycleCommunity</a>
+                <a class="navbar-brand" href="index.php">ScotlandCycleCommunity</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="Photos.html">Photos</a></li>
-                <li><a href="Routes.html">Routes</a></li>
-                <li><a href="Events.html">Events</a></li>
-                <li><a href="Message%20Board.html">Message Board</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="Photos.php">Photos</a></li>
+                <li><a href="Routes.php">Routes</a></li>
+                <li><a href="Events.php">Events</a></li>
+                <li><a href="Message%20Board.php">Message Board</a></li>
+                <li><a href="PhotoUpload.html">Photo Upload</a></li>
+
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="SignUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+
         </div>
     </nav>
+
+
 </header>
 <body>
-<div class="background" style="background-color: #363636">
-<!-- Header -->
 
-<!-- Photo Grid -->
-<div class="row">
-    <div class="column">
-        <img src="Images/mounthope.JPG" style="width:100%">
-
-        <img src="Images/RunPath.JPG" style="width:100%">
-
-        <img src="Images/View.jpg" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="Images/mounthope.JPG" style="width:100%">
-
-        <img src="Images/RunPath.JPG" style="width:100%">
-        <img src="Images/View.jpg" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="Images/mounthope.JPG" style="width:100%">
-
-        <img src="Images/RunPath.JPG" style="width:100%">
-
-        <img src="Images/View.jpg" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="Images/mounthope.JPG" style="width:100%">
-
-        <img src="Images/RunPath.JPG" style="width:100%">
-
-        <img src="Images/View.jpg" style="width:100%">
-    </div>
+<!--<div class="background" style="background-color: #363636">-->
+    <!-- Header -->
+    <br/>
+    <br/>
+    <br/>
+<div class = "login">
+<?php include "login.php";
+$_SESSION['return'] = 'Photos.php';
+?>
 </div>
-</div>
+    <!-- Photo Grid -->
+    <div class="row">
+        <?php
+
+
+        $files1 = scandir("uploads",1);
+
+        //print_r($files1);
+        for($i = 0; $i< count($files1)-2;$i++) {
+            echo "<img src='uploads/{$files1[$i]}'>";
+        }
+
+
+        ?>
+
+        </div>
+    <!--</div>-->
 </body>
