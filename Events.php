@@ -42,6 +42,9 @@ session_start();
             color: white;
             margin: 10px;
         }
+        input{
+            color: #363636;
+        }
 
         .month {
             padding: 70px 25px;
@@ -107,7 +110,7 @@ session_start();
             color: white !important
         }
 
-        /* Add media queries for smaller screens */
+
         @media screen and (max-width:720px) {
             .weekdays li, .days li {width: 13.1%;}
         }
@@ -158,6 +161,7 @@ session_start();
     $_SESSION['return'] = 'Events.php';
     ?>
 </div>
+<!--displays a calander from www.w3school.com-->
 <div class="calContainer">
 <div class="month">
     <ul>
@@ -215,6 +219,8 @@ session_start();
 </ul>
 </div>
 <div class="infoContainer">
+    <!--the info container displays the events coming up and makes them clickable to take the
+    user directly to the event website-->
     <li><a href="https://www.entrycentral.com/selkirksportive"><h3>Selkirk Sportive</h3></a></li>
     <p>Event Date: 6th May 2018</p>
     <p>Distance: 75km </p>

@@ -85,27 +85,28 @@ session_start();
 <h1>Message Board</h1>
 
     <?php
-
+/* connect to the database*/
     include "db.php";
 
 
     if (isset($_GET['newmessage'])){
-
+/* run the following query on the database to insert the new message into the database*/
         $query = "INSERT INTO message(user_id, subject, message_txt )
                   VALUES ('{$_SESSION['user_id']}','{$_POST['subject']}','{$_POST['message']}')";
 
 
-
+/* store it in the following*/
         $store = mysqli_query($dbconnect, $query);
 
         //echo "<script type='text/javascript'>location = 'Message%20Board.php'</script>";
 
     }
-
+/*run this query to read the database and sort it into descending date order and only display the newsest
+5 messages*/
     $query = "SELECT subject, message_txt, date FROM message ORDER BY date DESC LIMIT 5 ";
 
     $store = mysqli_query($dbconnect, $query);
-
+/*create a table and print the results to it */
     echo "<table>";
     while ($fetch = mysqli_fetch_array($store)) {
 

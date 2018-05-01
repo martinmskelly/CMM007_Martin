@@ -29,7 +29,7 @@ session_start();
         .login{
             background-color: #363636;
             width:33%;
-            color: blue;
+            color: white;
             margin: 10px;
         }
 
@@ -52,6 +52,9 @@ session_start();
             background-color: #363636;
             width: 100%;
             height: 100%;
+        }
+        input{
+            color: #363636;
         }
 
 
@@ -85,9 +88,9 @@ session_start();
 </nav>
 
 
-
+<!-- this doesnt seem to be doing anything
 <div id="map"></div>
-<!-- <script>
+ <script>
     var map;
     function initMap() {
         map = new google.maps.Map(document.getElementById('googleMap'), {
@@ -114,6 +117,8 @@ session_start();
                 ?>
             </div>
           <h1>Routes</h1>
+            <!--have three links when they are clicked they bring up the map on the screen centring in on the gps
+            data I have set below-->
             <div id="googleMap" style="width:100%;height:50%;"></div>
             <a onClick="myMap(-31.9546904,115.8350292)">Route 1</a>
             <p>Title: Perth CBD, Distance: 15km, Traffic: Heavy</p>
@@ -140,6 +145,7 @@ session_start();
                     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 }
             </script>
+            <!--the google API using the key to allow me to use googlemaps taken from www.ggogle.com-->
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4jChq2-_I4Dc0KSh3VI_OCaCDcG68oq8&callback=myMap">
                 map.onload(myMap(-31.9546904,115.8350292));
             </script>

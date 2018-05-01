@@ -1,4 +1,5 @@
 <?php
+//to remember if the user is signed in
 session_start();
 
 
@@ -61,11 +62,20 @@ session_start();
 
         }
 
+        .login_signup{
+            display: flex;
+               }
         .login{
 
-            width:100%;
+
             color: white;
             margin: 10px;
+        }
+        .signup{
+            margin: 10px;
+
+
+            color: white;
         }
         input{
             color: #363636;
@@ -91,7 +101,7 @@ session_start();
 
 <!--header start-->
 <header>
-
+<!--My navigation bar-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -113,16 +123,21 @@ session_start();
 
 </header>
 <body>
-
-<!--<div class="background" style="background-color: #363636">-->
-<!-- Header -->
+<!--page breaks to position the login script beneath the nav bar-->
 <br/>
 
 <br/>
+<div class = "login_signup">
 <div class = "login">
     <?php include "login.php";
     $_SESSION['return'] = 'index.php';
     ?>
+</div>
+<div class = "signup">
+    <?php include "login.php";
+    $_SESSION['return'] = 'index.php';
+    ?>
+</div>
 </div>
     <div class="imgcont">
         <img src= "Images/BikeLake.jpg" class="img-responsive" alt="Cyclists going up hill with loch in the distance"  style="width:50%">
@@ -131,6 +146,7 @@ session_start();
 <!-- header end-->
 <!-- main start-->
 <main>
+    <!--main container holds all the other containers. ie about, test ( which is a contact us section) and the twitter feed -->
     <div class="mainContainer">
         <div class="aboutContainer">
             <h1>ABOUT</h1>
@@ -154,6 +170,7 @@ session_start();
             <h1>Contact Info</h1>
             <p>For any problems, comments or to contact us about an event you wish to include on our site please use the contact information below.</p>
             <h2>Email</h2>
+            <!--here i would create a link to allow users to simply click the email and open up their email account-->
             <p>siteadmin@scotlandcycleco.com</p>
 
 

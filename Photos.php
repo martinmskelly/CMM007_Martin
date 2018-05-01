@@ -1,4 +1,5 @@
 <?php
+//session start remembers the user
 session_start();
 
 
@@ -56,36 +57,10 @@ session_start();
         object-fit: scale-down;
         display: inline;
     }
-
-    /* Create four equal columns that sits next to each other */
-    .column {
-        -ms-flex: 25%; /* IE10 */
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
+/*makes the font colour of the submit button black*/
+    input{
+        color: #363636;
     }
-
-    .column img {
-        margin-top: 8px;
-        vertical-align: middle;
-    }
-
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 800px) {
-        .column {
-            -ms-flex: 50%;
-            flex: 50%;
-            max-width: 50%;
-        }
-    }
-
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-        .column {
-            -ms-flex: 100%;
-            flex: 100%;
-            max-width: 100%;
-        }
 
     }
 </style>
@@ -119,12 +94,14 @@ session_start();
     <br/>
     <br/>
     <br/>
+<!--includes the login form for users to login-->
 <div class = "login">
 <?php include "login.php";
 $_SESSION['return'] = 'Photos.php';
 ?>
 </div>
-    <!-- Photo Grid -->
+    <!-- Photo Grid  scans the uploads folder for new images. looks for a time/ date and sorts to have the newest
+    photos display first-->
     <div class="row">
         <?php
 

@@ -31,7 +31,7 @@ if (isset($_GET['login'])) {
         echo "<div class = 'loginscreen'>";
         echo "<form action='login.php?login' method='post'>";
         echo "Email:<br>";
-        echo "<input type ='text' name='email' placeholder='Type Username here'><br>";
+        echo "<input type ='text' name='email' placeholder='Type Email here'><br>";
         echo "Password:<br>";
         echo "<input type ='text' name='password' placeholder='Type Password here'><br>";
         echo "<input type= 'submit' name='submitbutton' value='Submit'>";
