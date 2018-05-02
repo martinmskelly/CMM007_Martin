@@ -129,12 +129,14 @@ session_start();
 <br/>
 <div class = "login_signup">
 <div class = "login">
+    <h5>Login</h5>
     <?php include "login.php";
     $_SESSION['return'] = 'index.php';
     ?>
 </div>
 <div class = "signup">
-    <?php include "login.php";
+    <h5>Sign Up</h5>
+    <?php include "signup.php";
     $_SESSION['return'] = 'index.php';
     ?>
 </div>
